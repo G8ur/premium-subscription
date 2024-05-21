@@ -11,7 +11,7 @@ const ModalComponent = () => {
   return (
     <>
     <Button onClick={handleShow}>Signup</Button>
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose} >
         <Modal.Header>
             <Modal.Title>
                 Sign up 
