@@ -1,8 +1,16 @@
 import React from 'react'
 import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import { useState } from 'react';
+import '../Modal/modal.css'
+import styled from "styled-components";
 
-const ModalComponent = () => {
+interface  ModalProps{
+    text: string;
+    variant: "primary" | "secondary"  | "danger"
+}
+
+
+const ModalComponent = ({text, variant}: ModalProps) => {
     const[show,setShow] = useState(false)
 
     const handleClose = () => setShow(false)
@@ -10,11 +18,11 @@ const ModalComponent = () => {
 
   return (
     <>
-    <Button onClick={handleShow}>Signup</Button>
-    <Modal show={show} onHide={handleClose} >
+    <Button onClick={handleShow} variant={variant} style={{marginRight: "1rem" , padding: "0.5rem "}} >{text}</Button>
+    <Modal className=''  show={show} onHide={handleClose} >
         <Modal.Header>
             <Modal.Title>
-                Sign up 
+                {text}
             </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -29,7 +37,7 @@ const ModalComponent = () => {
         </Modal.Body>
         <Modal.Footer>
             <Button variant='secondary' onClick={handleClose}>Close</Button>
-            <Button variant='primary' >Signup</Button>
+            <Button variant='primary' >{text}</Button>
         </Modal.Footer>
     </Modal>
     </>

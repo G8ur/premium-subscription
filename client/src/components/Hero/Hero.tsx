@@ -39,7 +39,10 @@ const Hero = () => {
             <HeaderContainer><Heading>Feed Your Mind</Heading>
             <SubHeading>Grow, learn, and become more successful by reading some of the top
             article by highly reputable individuals</SubHeading>
-            <ModalComponent />
+            <ModalComponent
+            text="Sign-up "  variant="primary"/>
+            <ModalComponent  
+            text="Login" variant="danger" />
             </HeaderContainer>
             
         </Container>
